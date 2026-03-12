@@ -24,6 +24,10 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
             background-color: var(--bg-color);
@@ -33,8 +37,37 @@
             letter-spacing: -0.022em;
         }
 
+        nav.top-nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
         header {
-            padding: 120px 20px 60px;
+            padding: 80px 20px 60px;
             max-width: 980px;
             margin: 0 auto;
             text-align: center;
@@ -196,10 +229,22 @@
             h2 { font-size: 32px; }
             .about-text { max-width: 100%; }
             header { padding-top: 60px; }
+            .nav-links { gap: 10px; }
+            .nav-links a { font-size: 12px; }
         }
     </style>
 </head>
 <body>
+
+    <nav class="top-nav">
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#publication">Publications</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+    </nav>
 
     <header>
         <h1>Efi Arvaniti</h1>
@@ -252,7 +297,6 @@
                         <li>Annotated speech audio and clustered into emotion classes.</li>
                         <li>Led a team of 3 to 5 coworkers, coordinating between Development and Data Analysis teams.</li>
                         <li>Organized timelines, meetings, and presented deliverables to the Development team.</li>
-                        <li>Contributed to development and validation of ML annotation tools.</li>
                     </ul>
                 </div>
 
@@ -263,7 +307,6 @@
                     <ul class="description-list">
                         <li>Managed and developed Website and Web application projects for customers using Joomla and Wordpress.</li>
                         <li>Participated in software development projects using C and C++.</li>
-                        <li>Handled hardware services and office administration.</li>
                     </ul>
                 </div>
 
@@ -273,7 +316,6 @@
                     <div class="date">January 2013 - June 2013</div>
                     <ul class="description-list">
                         <li>General IT support: computer services, printers, software/hardware support, and network maintenance.</li>
-                        <li>Provided guidance to users and assisted in local election organization.</li>
                     </ul>
                 </div>
 
@@ -306,6 +348,24 @@
             <div class="education-item">
                 <div class="degree">Bachelor of Science (Diploma) in Electronics and Computer Engineering</div>
                 <div class="university">Technical University of Crete, Greece (2008)</div>
+            </div>
+        </section>
+
+        <section id="publication">
+            <h2>Publications</h2>
+            <div class="experience-grid">
+                <div class="experience-item">
+                    <div class="role">Low power scan by partitioning and scan hold</div>
+                    <div class="company">DDECS 2012 (Design and Diagnostics of Electronic Circuits and Systems)</div>
+                    <div class="date">2012</div>
+                    <p>15th International Symposium on Design and Diagnostics of Electronic Circuits and Systems. <em>Focus on scan chain partitioning for low power dissipation during the shift phase of scan testing.</em></p>
+                </div>
+                <div class="experience-item">
+                    <div class="role">Low-Power Scan Testing: A Scan Chain Partitioning and Scan Hold Based Technique</div>
+                    <div class="company">PCI 2012 (Panhellenic Conference on Informatics)</div>
+                    <div class="date">2012</div>
+                    <p>16th Panhellenic Conference on Informatics. <em>Exploring scan chain partitioning techniques supported by a scan hold mechanism for low power dissipation.</em></p>
+                </div>
             </div>
         </section>
 
